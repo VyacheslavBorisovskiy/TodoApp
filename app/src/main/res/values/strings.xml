@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">TodoApp</string>
+    <string name="title_new_task_activity">New Task</string>
+
+    <string name="hint_task_name">I want to …</string>
+    <string name="date">Set start date &amp; time</string>
+    <string name="save">Save</string>
+
+    <string-array name="start_dates_array">
+        <item>Later Today</item>
+        <item>Tomorrow</item>
+        <item>Next Week (Monday)</item>
+        <item>Pick a date &amp; time</item>
+    </string-array>
+
+    <string name="firingAlarm">Firing alarm</string>
+    <string name="notificationDescription">Setting notification options</string>
+    <string name="task_name">Task Name</string>
+
+</resources>
