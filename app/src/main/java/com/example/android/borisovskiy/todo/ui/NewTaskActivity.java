@@ -40,8 +40,6 @@ public class NewTaskActivity extends AppCompatActivity implements DatePickerFrag
     private static final String TIME_PICKER_TAG = "timePicker";
 
     private Calendar cal;
-    private DateTimeSetter dateTimeSetter;
-    private DateFormatter dateFormatter;
 
     private NotificationManager notificationManager;
 
@@ -56,9 +54,7 @@ public class NewTaskActivity extends AppCompatActivity implements DatePickerFrag
         setContentView(R.layout.activity_new_task);
 
         cal = Calendar.getInstance();
-        dateTimeSetter = new DateTimeSetter();
-        dateFormatter = new DateFormatter();
-        dateTimeSetter.presetTime(cal);
+        DateTimeSetter.presetTime(cal);
 
         bindViews();
 
@@ -98,18 +94,18 @@ public class NewTaskActivity extends AppCompatActivity implements DatePickerFrag
     }
 
     public void setLaterTodayStartTime() {
-        dateTimeSetter.setLaterTodayStartTime(cal);
-        startDateTextView.setText(dateFormatter.formatStartDate(cal));
+        DateTimeSetter.setLaterTodayStartTime(cal);
+        startDateTextView.setText(DateFormatter.formatStartDate(cal));
     }
 
     public void setTomorrowStartTime() {
-        dateTimeSetter.setTomorrowStartTime(cal);
-        startDateTextView.setText(dateFormatter.formatStartDate(cal));
+        DateTimeSetter.setTomorrowStartTime(cal);
+        startDateTextView.setText(DateFormatter.formatStartDate(cal));
     }
 
     public void setNextWeekStartDateTime() {
-        dateTimeSetter.setNextWeekStartDateTime(cal);
-        startDateTextView.setText(dateFormatter.formatStartDate(cal));
+        DateTimeSetter.setNextWeekStartDateTime(cal);
+        startDateTextView.setText(DateFormatter.formatStartDate(cal));
     }
 
     public void setCustomStartDateTime() {
@@ -127,14 +123,14 @@ public class NewTaskActivity extends AppCompatActivity implements DatePickerFrag
     @Override
     public void onDateSelected(int year, int month, int dayOfMonth) {
         cal.set(year, month, dayOfMonth);
-        startDateTextView.setText(dateFormatter.formatStartDate(cal));
+        startDateTextView.setText(DateFormatter.formatStartDate(cal));
     }
 
     @Override
     public void onTimeSelected(int hourOfDay, int minute) {
         cal.set(Calendar.HOUR_OF_DAY, hourOfDay);
         cal.set(Calendar.MINUTE, minute);
-        startDateTextView.setText(dateFormatter.formatStartDate(cal));
+        startDateTextView.setText(DateFormatter.formatStartDate(cal));
     }
 
     public void resetStartDateTime(View view) {
